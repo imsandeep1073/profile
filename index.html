@@ -3,14 +3,14 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5SMEVF5XM3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SMEVF5XM3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-5SMEVF5XM3');
-</script>
+        gtag('config', 'G-5SMEVF5XM3');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
@@ -23,7 +23,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
- 
+
 
 <style>
     @keyframes border-animation {
@@ -134,8 +134,12 @@
                 <span
                     class="absolute inset-0 bg-gradient-to-r from-red-600 via-blue-500 to-red-600 animate-border"></span>
                 <span class="absolute inset-1 rounded-lg"></span>
+                <!-- <a href="assets/CV(Front-End Developer)Sandeep.pdf" download="CV(Front-End Developer)Sandeep.pdf"
+                    class="relative z-10"><i class="fa fa-spinner fa-spin"></i> Get Resume</a> -->
                 <a href="assets/CV(Front-End Developer)Sandeep.pdf" download="CV(Front-End Developer)Sandeep.pdf"
-                    class="relative z-10">Get Resume</a>
+                    class="relative z-10" id="downloadButton">
+                    <i class="fa fa-spinner fa-spin" style="display:none;"></i> Get Resume
+                </a>
 
             </button>
         </div>
@@ -332,7 +336,7 @@
                     <div class="item w-[300px] h-[300px] overflow-hidden m-4">
                         <div class="flex justify-between items-center pl-1 pr-1">
                             <h2>MYCIndia</h2>
-                            <a target="_blank" class="text-sm hover:underline hover:text-red-600"
+                            <a target="_blank" class="text-sm text-sky-600 font-semibold  hover:underline"
                                 href="https://www.mycindia.com/">Site Visit</a>
                         </div>
                         <a class="card">
@@ -347,7 +351,7 @@
                     <div class="item w-[300px] h-[300px] overflow-hidden m-4">
                         <div class="flex justify-between items-center pl-1 pr-1">
                             <h2>Paradigm24</h2>
-                            <a target="_blank" class="text-sm hover:underline hover:text-red-600"
+                            <a target="_blank" class="text-sm text-sky-600 font-semibold  hover:underline"
                                 href="https://www.paradigm24.com/">Site Visit</a>
                         </div>
                         <a href="p24.html" target="_parent" class="card">
@@ -394,7 +398,7 @@
                     <div class="item w-[300px] h-[300px] overflow-hidden m-4">
                         <div class="flex justify-between items-center pl-1 pr-1">
                             <h2>StudyAbroad (Ai Counselor)</h2>
-                            <a target="_blank" class="text-sm hover:underline hover:text-red-600"
+                            <a target="_blank" class="text-sm text-sky-600 font-semibold  hover:underline"
                                 href="https://crm-staging.mycindia.com/">Site Visit</a>
                         </div>
                         <a href="crm.html" target="_parent" class="card">
@@ -527,7 +531,7 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script>
+    <!-- <script>
         window.addEventListener('load', function () {
             document.getElementById('modal').classList.remove('hidden');
         });
@@ -535,7 +539,7 @@
         document.getElementById('closeModal').addEventListener('click', function () {
             document.getElementById('modal').classList.add('hidden');
         });
-    </script>
+    </script> -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -576,6 +580,7 @@
             menu.classList.toggle('hidden');
         });
     </script>
+
     <script>
         $(document).ready(function () {
             $('.owl-carousel').owlCarousel({
@@ -602,6 +607,26 @@
                     }
                 }
             })
+        });
+    </script>
+
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function (e) {
+            e.preventDefault();
+            var button = e.target;
+            var spinner = button.querySelector('i');
+            var text = button.querySelector('span');
+
+            spinner.style.display = 'inline-block';
+            button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
+            
+            setTimeout(function () {                
+                window.location.href = button.href;                
+                setTimeout(function () {
+                    button.innerHTML = '<i class="fa fa-spinner fa-spin" style="display:none;"></i> Get Resume';
+                }, 200); 
+            }, 1000); 
         });
     </script>
 </body>
