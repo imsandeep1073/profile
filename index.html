@@ -335,6 +335,21 @@
                     </div>
                     <div class="item w-[300px] h-[300px] overflow-hidden m-4">
                         <div class="flex justify-between items-center pl-1 pr-1">
+                            <h2>Next js</h2>
+                            <a target="_blank" class="text-sm text-sky-600 font-semibold  hover:underline"
+                                href="https://hyve-alpha.vercel.app/">Site Visit</a>
+                        </div>
+                        <a href="nextjs_project.html" target="_parent" class="card">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide p-1"><img src="assets/nextjs.png" alt="Image 1" />
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item w-[300px] h-[300px] overflow-hidden m-4">
+                        <div class="flex justify-between items-center pl-1 pr-1">
                             <h2>MYCIndia</h2>
                             <a target="_blank" class="text-sm text-sky-600 font-semibold  hover:underline"
                                 href="https://www.mycindia.com/">Site Visit</a>
@@ -620,13 +635,13 @@
 
             spinner.style.display = 'inline-block';
             button.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing...';
-            
-            setTimeout(function () {                
-                window.location.href = button.href;                
+
+            setTimeout(function () {
+                window.location.href = button.href;
                 setTimeout(function () {
                     button.innerHTML = '<i class="fa fa-spinner fa-spin" style="display:none;"></i> Get Resume';
-                }, 200); 
-            }, 1000); 
+                }, 200);
+            }, 1000);
         });
     </script>
 </body>
